@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panel de administración — ラーメンお菓子</title>
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header site-header-simple">
+  <div class="header-inner-simple">
+    <a href="index.html" class="simple-logo">
+      <span class="simple-logo-jp">ラーメン<span class="accent">お菓子</span></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="btn btn-outline">Ver tienda</a>
+      <button id="logout-btn" class="btn btn-danger">Cerrar sesión</button>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-main">
+  <section class="page-title">
+    <h1>Panel de administración</h1>
+    <p>Gestiona los productos del catálogo.</p>
+  </section>
+
+  <section class="admin-layout">
+
+    <div class="admin-form-card">
+      <h2 id="form-title">Agregar producto</h2>
+
+      <form id="product-form" class="form">
+        <div class="form-group">
+          <label for="product-name">Nombre</label>
+          <input type="text" id="product-name" name="name" required placeholder="Ej. Buldak Fire Noodles">
+        </div>
+
+        <div class="form-group">
+          <label for="product-description">Descripción</label>
+          <textarea id="product-description" name="description" rows="3" placeholder="Descripción del producto"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="product-category">Categoría</label>
+          <select id="product-category" name="category" required>
+            <option value="ramen">Ramen</option>
+            <option value="snack" selected>Snacks</option>
+            <option value="dulce">Dulces</option>
+            <option value="bebida">Bebidas</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="product-price">Precio</label>
+          <input type="number" id="product-price" name="price" min="0" step="0.01" required placeholder="0.00">
+        </div>
+
+        <div class="form-group">
+          <label for="product-image">Imagen</label>
+          <input type="file" id="product-image" name="image" accept="image/*">
+        </div>
+
+        <p id="form-message"></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-product-btn" class="btn btn-primary">Agregar producto</button>
+          <button type="button" id="cancel-edit-btn" class="btn btn-outline" style="display:none;">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-list-card">
+      <h2>Productos existentes</h2>
+      <div id="admin-products-list" class="admin-products-list">
+        <p class="loading">Cargando productos...</p>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="site-footer site-footer-simple">
+  <p class="copy">© 2026 ラーメンお菓子 · Proyecto de pruebas</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
