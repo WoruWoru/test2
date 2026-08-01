@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo de snacks coreanos | Seoul Snacks</title>
+<meta name="description" content="Explora el catálogo completo de Seoul Snacks: filtra por categoría y precio para encontrar tu próximo snack coreano.">
+<meta property="og:title" content="Catálogo de snacks coreanos | Seoul Snacks">
+<meta property="og:description" content="Filtra por categoría y precio y encuentra tu próximo snack.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Logo Seoul Snacks">
+      <span class="brand-name">Seoul<span>Snacks</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="btn btn-primary btn-sm" href="login.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tienda</span>
+      <h2>Catálogo <span class="text-red">completo</span></h2>
+      <p id="catalog-count" class="muted">Cargando productos…</p>
+    </div>
+
+    <div class="toolbar">
+      <input class="field" id="f-search" type="search" placeholder="Buscar por nombre…" aria-label="Buscar">
+      <select class="field" id="f-category" aria-label="Categoría">
+        <option value="">Todas las categorías</option>
+      </select>
+      <select class="field" id="f-sort" aria-label="Ordenar">
+        <option value="recent">Más recientes</option>
+        <option value="price_asc">Precio: menor a mayor</option>
+        <option value="price_desc">Precio: mayor a menor</option>
+        <option value="name">Nombre (A-Z)</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="catalog-grid"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Seoul Snacks.</span>
+      <a href="login.html">Acceso administrador</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/store-resolver.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/api.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

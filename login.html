@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acceso administrador | Seoul Snacks</title>
+<meta name="description" content="Panel privado de Seoul Snacks. Inicia sesión para gestionar el catálogo de productos.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <form class="auth-card" id="login-form">
+    <img class="logo" src="assets/logo.png" alt="Seoul Snacks">
+    <h1>Panel <span class="text-red">Admin</span></h1>
+    <p>Ingresa con tu cuenta de administrador</p>
+
+    <div id="login-alert" class="alert alert-error hidden" style="margin-bottom:16px"></div>
+    <div id="config-alert" class="alert alert-info hidden" style="margin-bottom:16px">
+      Supabase aún no está conectado. Configura <code>js/supabase-config.js</code> para habilitar el acceso.
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="email">Correo electrónico</label>
+      <input class="field" type="email" id="email" required autocomplete="email" placeholder="admin@seoulsnacks.com">
+    </div>
+    <div class="form-group">
+      <label class="label" for="password">Contraseña</label>
+      <input class="field" type="password" id="password" required autocomplete="current-password" placeholder="••••••••">
+    </div>
+
+    <button class="btn btn-primary btn-block" type="submit" id="login-btn">Iniciar sesión</button>
+    <p style="text-align:center;margin-top:18px">
+      <a class="muted" href="index.html" style="font-size:.9rem">← Volver a la tienda</a>
+    </p>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/store-resolver.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
