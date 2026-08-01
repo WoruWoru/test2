@@ -27,6 +27,10 @@
     <h1>Iniciar sesión</h1>
     <p class="auth-subtitle">Acceso exclusivo para administradores.</p>
 
+    <p id="config-alert" class="error hidden">
+      Supabase no está configurado todavía. Edita js/supabase-config.js con tu URL y anon key.
+    </p>
+
     <form id="login-form" class="form">
       <div class="form-group">
         <label for="email">Correo electrónico</label>
@@ -38,9 +42,9 @@
         <input type="password" id="password" name="password" required placeholder="••••••••">
       </div>
 
-      <p id="login-error" class="error"></p>
+      <p id="login-alert" class="error hidden"></p>
 
-      <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+      <button type="submit" id="login-btn" class="btn btn-primary btn-block">Iniciar sesión</button>
     </form>
   </div>
 </main>
@@ -50,7 +54,9 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-<script src="js/login.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/store-resolver.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>
